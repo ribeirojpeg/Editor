@@ -41,16 +41,16 @@ def menuEdicao(nomeArquivo):
         opcao = input("Escolha: ")
 
         if opcao == "1":
-            nova = input("Digite o texto da nova linha: ")
-            linhas.append(nova)
+            novaLinha = input("Digite o texto da nova linha: ")
+            linhas.append(novaLinha)
             print("-> Linha adicionada na lista (memória RAM).")
 
         elif opcao == "2":
             try:
                 num = int(input("Número da linha para editar: ")) - 1
                 if 0 <= num < len(linhas):
-                    novo_texto = input(f"Novo texto para a linha {num + 1}: ")
-                    linhas[num] = novo_texto
+                    novoTexto = input(f"Novo texto para a linha {num + 1}: ")
+                    linhas[num] = novoTexto
                     print("-> Linha alterada na lista (memória RAM).")
                 else:
                     print("Linha inválida.")
@@ -90,7 +90,7 @@ def main():
             nome = input("Nome do arquivo (ex: notas.txt): ").strip()
             if not nome.endswith(".txt"):
                 nome += ".txt"
-            menu_edicao(nome)
+            menuEdicao(nome)
 
         elif opcao == "2":
             nome = input("Nome do arquivo para EXCLUIR: ").strip()
